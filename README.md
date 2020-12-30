@@ -1,2 +1,2 @@
 # biomedical-optics
-Course example and homework codes
+Course example codes

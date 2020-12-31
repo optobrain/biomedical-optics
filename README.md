@@ -1,2 +1,2 @@
 # biomedical-optics
-Course example and homework codes
+MATLAB codes for the examples in the textbook draft

@@ -48,20 +48,3 @@ legend(cat(2,{'raw'},compose('%g',kerSize)));
 
 
 
-%% Exponential decay f
-
-f = exp(-(x-4));
-f(x<4) = 0;
-
-figure;
-plot(x,f);
-
-
-%% Make z and RTMs
-
-% sample z
-dz = 1;  % step size in z; arbitrarily chosen
-zEnd = 100;  % the z position at which our calculation will stop
-z = zSam:dz:zEnd;  % array of z positions
-nz = length(z);  % length of the array
-

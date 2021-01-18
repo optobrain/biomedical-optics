@@ -1,4 +1,35 @@
-%% Constants and given values: all lengths are in [mm].
+%% Symbolic
+
+clear all;
+
+syms f zSamp zImg positive
+syms xSamp thSamp positive
+assume(zSamp > f)
+
+rIn = [xSamp thSamp]'
+
+rtmSys = [1 zImg; 0 1] * [1 0; -1/f 1] * [1 zSamp; 0 1]
+
+rOut = rtmSys * rIn
+
+xOut(f,zSamp,zImg,xSamp,thSamp) = rOut(1)
+
+xOut(100,150,300,xSamp,thSamp)
+
+
+%% find zImg using symbolic code
+
+xOut(100,150,zImg,20,thSamp)
+
+xOutDiff(f,zSamp,zImg,xSamp) = xOut(f,zSamp,zImg,xSamp,0) - xOut(f,zSamp,zImg,xSamp,0.1)
+
+[zImgSol(f,zSamp,xSamp),solPara,solCond] = solve( xOutDiff == 0 , zImg, 'ReturnConditions',true)
+
+zImgSol(100,150,20)
+
+
+%% Numerical:
+% Constants and given values: all lengths are in [mm].
 
 clear;
 

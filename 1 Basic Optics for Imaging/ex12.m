@@ -28,7 +28,7 @@ dt = 0.1e-9;  % time step for each frame in the video
 t = 0:dt:tMax;  % an array of time points
 nt = length(t);
 
-v = VideoWriter('ex6.mp4','MPEG-4');  % the result video will be saved as ex6.mp4
+v = VideoWriter('ex12.mp4','MPEG-4');  % the result video will be saved as ex6.mp4
 v.Quality = 95;
 v.FrameRate = 10;  % 10 frames per second.  Each frame is 0.1 ns, thus 1 ns video per second (i.e., 200 frames or 20 s in total)
 open(v);

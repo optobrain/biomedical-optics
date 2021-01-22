@@ -32,8 +32,10 @@ dxKernPhy = round(dxKern/dxp);  % the kernel size in terms of the physical pixel
 kern = ones(dxKernPhy,dxKernPhy);
 kern = kern/sum(kern(:));  % normalize the kernel when using convn()
 
-% convolution of the phySamp
+% convolution of the phySamp : this can take long when kern is large
+tic
 phySampConv = convn(phySamp,kern,'same');  
+toc
 
 % pick the data from the center of each "camera pixel" on the sample plane
 dxSamPhy = round(dxSamp/dxp);  % the sampling interval in terms of the physical pixel number

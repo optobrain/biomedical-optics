@@ -1,4 +1,4 @@
-%% Symbolic
+%% RTM and rOut in symbolic
 
 clear all;
 
@@ -14,13 +14,13 @@ rOut = rtmSys * rIn
 rOut(1)
 
 
-%% calculate value
+%% Calculate value
 
-xOut(f,theta) = rOut(1)
+xOut(f,theta) = rOut(1)  % declare a function explicitly
 
 xOutVal = xOut(100,atan(1/10))
 
-eval(abs(xOutVal))
+xOutVal = eval(xOutVal)
 
 
 

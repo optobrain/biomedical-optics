@@ -1,4 +1,4 @@
-%% Symbolic
+%% RTM and rOUt in symbolic
 
 clear all;
 
@@ -54,11 +54,11 @@ rtmAir = [1 dz; 0 1];  % RTM of a thin air slab with the thickness of dz
 %% Trace a ray normal to the lens, as an example
 
 % initial angle
-thetaSamp = 0;  % the initial ray angle: a ray normal to the lens
+thSamp = 0;  % the initial ray angle: a ray normal to the lens
 
 % prepare the ray vector
 r = zeros(2,nz);  % array of ray vectors (at every z position).  r(1,iz) is the height (x), and r(2,iz) is the angle at iz'th z position
-r(:,1) = [xSamp thetaSamp]';  % the initial ray vector.  we need the transpose (') as r(:,1) is a column vector.
+r(:,1) = [xSamp thSamp]';  % the initial ray vector.  we need the transpose (') as r(:,1) is a column vector.
 
 % calculate ray vector at each z position from the initial position step by step
 for iz=2:nz
@@ -82,13 +82,13 @@ ylabel('x [mm]');
 %% Trace 9 rays with different initial angles
 
 % initial angles : many values
-thetaSamp = linspace(-pi/8,pi/8,9);  % array of the initial angle
-ntheta = length(thetaSamp);
+thSamp = linspace(-pi/8,pi/8,9);  % array of the initial angle
+ntheta = length(thSamp);
 
 % repeat the above of tracing a ray FOR each of the initial angles
 r = zeros(2,nz,ntheta);  % a set of ray vectors for each z position and each initial angle
 for itheta=1:ntheta  
-    thetaSamp1 = thetaSamp(itheta);  % itheta'th angle value
+    thetaSamp1 = thSamp(itheta);  % itheta'th angle value
     
     r1 = zeros(2,nz);  % array of ray vectors (at every z position) for the given angle
     r1(:,1) = [xSamp thetaSamp1]';

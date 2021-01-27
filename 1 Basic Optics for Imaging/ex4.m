@@ -1,4 +1,4 @@
-%% Constants and given values: all lengths are in [mm].
+%% Make x and f(x)
 
 clear;
 
@@ -27,23 +27,23 @@ subplot(313);  plot(x,[f',fConv']);  xlim([0 100]);
 
 %% Change the kernel size
 
-kerSize = (4:2:20);  % many kernel sizes: better to be even numbers to make g(x) symmetric
-nk = length(kerSize);
+kernSize = (4:2:20);  % many kernel sizes: better to be even numbers to make g(x) symmetric
+nk = length(kernSize);
 
 figure;
 line(x,f,'color','k');  % the original f(x) in black
 clr = lines(nk);  % different color for different kerSize result
 for ik=1:nk
-    kerSize1 = kerSize(ik);
+    kernSize1 = kernSize(ik);
     
-    x1 = -kerSize1/2:kerSize1/2;
+    x1 = -kernSize1/2:kernSize1/2;
     g = ones(size(x1));
     g = g/sum(g);
     
     fConv = conv(f,g,'same');
     line(x,fConv,'color',clr(ik,:));
 end
-legend(cat(2,{'raw'},compose('%g',kerSize)));
+legend(cat(2,{'raw'},compose('%g',kernSize)));
     
 
 

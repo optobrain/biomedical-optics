@@ -20,7 +20,7 @@ xOut(f,theta) = rOut(1)  % declare a function explicitly
 
 xOutVal = xOut(100,atan(1/10))
 
-xOutVal = eval(xOutVal)
+xOutVal = eval(xOutVal)  % test from Oscar
 
 
 

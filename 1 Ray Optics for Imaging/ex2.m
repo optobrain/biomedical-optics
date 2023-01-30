@@ -1,6 +1,6 @@
 %% RTM and rOut in symbolic
 
-clear all;
+clear
 
 syms f positive  % zImg = f
 syms xIn theta positive
@@ -16,11 +16,11 @@ rOut(1)
 
 %% Calculate value
 
-xOut(f,theta) = rOut(1)  % declare a function explicitly
+xOut(f, theta) = rOut(1)  % declare a function explicitly
 
-xOutVal = xOut(100,atan(1/10))
+xOutVal = xOut(100, atan(1/10))
 
-xOutVal = eval(xOutVal)  % test from Oscar
+xOutVal = eval(xOutVal)  
 
 
 

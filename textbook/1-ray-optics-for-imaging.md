@@ -6,8 +6,8 @@ Optics explores the characteristics of light and its interactions with matter. I
 
 The straight-ray approximation is especially useful for understanding how light is focused by a lens. The main properties of an ideal thin lens are summarized in Figure 1.1:
 
-1. A light ray striking the lens perpendicularly is deflected so that it passes through the lens focal point.
-2. A light ray passing through the center of the lens is not deflected.
+1. A light ray striking the lens perpendicularly is deflected so that it passes through the lens focal point (orange rays in Figure 1.1).
+2. A light ray passing through the center of the lens is not deflected (green rays in Figure 1.1).
 3. Light propagation is reciprocal: if rays emitted from a source on one side of the lens converge to a point on the other side, then rays emitted from that convergence point and directed back toward the lens retrace the original paths.
 
 ![Major properties of an ideal lens.](figs/fig-1-1-ideal-lens.svg)
